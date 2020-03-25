@@ -2,7 +2,7 @@
   "name": "e-commerce-website",
   "version": "0.1.0",
   "private": true,
-  "homepage": "file:///media/dtech/46708BA3708B97F7/D-TECH.workshop/DTECH-web/MyProjects/react/build/",
+  "homepage": "https://dev-dtech.github.io/MyProjects/E-Commerce-Website/build",
   "dependencies": {
     "react": "^16.13.1",
     "react-dom": "^16.13.1",

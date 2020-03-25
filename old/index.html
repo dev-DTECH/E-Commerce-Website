@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="./style/ui.css" />
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/page.js/1.11.5/page.min.js"></script>
+		<title>DTECH | E-Commerce-Website</title>
+	</head>
+	<body>
+		<nav>
+			<img id="logo" src="img.png" alt="logo" srcset="img.png" />
+
+			<div id="search-box">
+				<input type="text" />
+				<a href="./search_result">
+					<img src="./style/search-icon.svg" alt="search icon" />
+				</a>
+			</div>
+			<div id="menu">
+				<a href="./">Home</a>
+				<a href="./about">About</a>
+				<a href="./login">Login</a>
+				<a id="cart" href="./cart">
+					<img
+						src="./style/shopping_cart-logo.svg"
+						alt="shopping cart logo"
+						srcset=""
+					/>
+				</a>
+			</div>
+			<div id="burger-menu" onclick="toggleMenu()">
+				<div></div>
+				<div></div>
+				<div></div>
+			</div>
+		</nav>
+		<div id="root"></div>
+		<script src="./js/router.js"></script>
+		<script src="./style/script.js"></script>
+	</body>
+</html>

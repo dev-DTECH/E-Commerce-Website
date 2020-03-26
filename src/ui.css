@@ -84,7 +84,7 @@ nav {
 nav > div {
 	display: flex;
 }
-nav > div > a {
+#menu > a {
 	min-width: 100px;
 	text-align: center;
 	margin: auto 10px;
@@ -94,27 +94,42 @@ nav > div > a {
 	border-radius: 20px;
 	padding: 5px;
 }
-#cart {
+#menu > #cart {
 	background-color: transparent;
 }
 #search-box {
+	display: flex;
+	/* flex-direction: row; */
+	align-items: center;
 	border-radius: 20px;
 	background-color: rgb(184, 253, 221);
-
 	height: 40px;
+	width: 50%;
 }
 #search-box > a {
+	border-radius: 20px;
+
+	min-width: 50px;
+	/* min-width: px; */
+	padding: 0;
 	margin: 0;
+	width: 24px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	background-color: rgb(184, 253, 221);
 }
 #search-box > input {
+	width: 100%;
 	border-radius: 20px;
+	height: 100%;
 	border: 0ch;
 	background-color: rgb(230, 230, 230);
 }
 #logo {
 	height: 40px;
 	width: 40px;
+	margin: 5px;
 }
 footer {
 	text-align: center;
@@ -137,6 +152,7 @@ nav > #burger-menu {
 	height: 50px;
 	border-radius: 50%;
 	background-color: royalblue;
+	transform: scale(0.8);
 }
 #burger-menu > div {
 	margin: 2.5px;
@@ -147,13 +163,6 @@ nav > #burger-menu {
 	transform: none;
 	transition: 0.5s;
 	opacity: 1;
-}
-/* #menu{
-	backdrop-filter: blur(5px);
-
-} */
-#menu > a {
-	display: inline-block;
 }
 
 @media only screen and (max-width: 800px) {
@@ -196,7 +205,10 @@ nav > #burger-menu {
     left:0;
 	background:linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%,rgb(0, 0, 0) 100%);
 }
-
+#slide > img{
+	height: calc(100vh - 48px);
+	width: 100vw;
+}
 
 .content{
 	min-height: 200vh;

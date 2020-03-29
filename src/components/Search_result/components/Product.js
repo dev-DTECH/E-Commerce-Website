@@ -10,6 +10,7 @@ export default class Product extends Component {
 					width="200"
 					height="200"
 					alt={this.props.data.ImagePath}
+					srcSet="./style/img.png"
 				/>
 				<div>
 					<h2 className="product-name" >{this.props.data.name}</h2>

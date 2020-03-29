@@ -2,8 +2,11 @@
 	padding: 0;
 	margin: 0;
 	box-sizing: border-box;
+	font-family: sans-serif;
 }
-
+html {
+	scroll-behavior: smooth;
+}
 #root {
 	position: relative;
 	overflow-x: hidden;
@@ -25,7 +28,7 @@
 	box-shadow: 4px 4px 12px 0px rgba(0, 0, 0, 0.3);
 }
 .product > div {
-	width:  calc(100% - 200px);
+	width: calc(100% - 200px);
 	position: relative;
 	height: 200px;
 	display: grid;
@@ -79,25 +82,37 @@ nav {
 	backdrop-filter: blur(5px);
 	box-shadow: 4px 4px 12px 0px rgba(0, 0, 0, 0.3);
 	z-index: 2;
-	min-width: 100vw;
+	min-width: 100%;
 }
 nav > div {
 	display: flex;
 }
-#menu > a {
+#menu > a{
 	min-width: 100px;
 	text-align: center;
 	margin: auto 10px;
 	text-decoration: none;
-	color: white;
-	background-color: black;
+	color: black;
+	background-color: rgba(0, 0, 0, 0.05);
+
 	border-radius: 20px;
 	padding: 5px;
+}
+#menu > a:hover{
+	background-color: rgba(0, 0, 0, 0.1);
+
+}
+#menu > #active{
+	position: absolute;
+	width: 100px;
+	height: 28px;
+	background-color: black;
+	border-radius: 20px;
 }
 #menu > #cart {
 	background-color: transparent;
 }
-#search-box {
+.search-box {
 	display: flex;
 	/* flex-direction: row; */
 	align-items: center;
@@ -106,7 +121,7 @@ nav > div {
 	height: 40px;
 	width: 50%;
 }
-#search-box > a {
+.search-box > a {
 	border-radius: 20px;
 
 	min-width: 50px;
@@ -119,17 +134,24 @@ nav > div {
 	justify-content: center;
 	background-color: rgb(184, 253, 221);
 }
-#search-box > input {
+.search-box > input {
 	width: 100%;
 	border-radius: 20px;
 	height: 100%;
 	border: 0ch;
 	background-color: rgb(230, 230, 230);
 }
+nav > #categories{
+
+	background-color: rgb(184, 253, 221);
+	padding: 5px 10px;
+	border-radius: 20px;
+}
 #logo {
-	height: 40px;
-	width: 40px;
-	margin: 5px;
+	/* height: 40px;
+	width: 40px; */
+	margin: 10px;
+	color: darkorange;
 }
 footer {
 	text-align: center;
@@ -147,7 +169,7 @@ nav > #burger-menu {
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
-
+	z-index: 100;
 	width: 50px;
 	height: 50px;
 	border-radius: 50%;
@@ -164,7 +186,18 @@ nav > #burger-menu {
 	transition: 0.5s;
 	opacity: 1;
 }
-
+#menu{
+	z-index: 100;
+}
+#hide_menu{
+	z-index: 99;
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+}
 @media only screen and (max-width: 800px) {
 	#menu {
 		width: 50%;
@@ -175,42 +208,91 @@ nav > #burger-menu {
 		right: 0;
 		/* margin: 0 10px; */
 		transition: transform 0.5s;
-		background-color: rgba(255, 255, 255, 0.3);
+		background-color: rgba(255, 255, 255, 0.75);
 		/* backdrop-filter: blur(5px); */
 		box-shadow: 4px 4px 12px 0px rgba(0, 0, 0, 0.3);
 		border-radius: 10px;
 	}
-	#menu > a{
+	#menu > a {
 		margin: 5px auto;
 	}
 	nav > #burger-menu {
 		display: flex;
 	}
 }
-#slide{
+#slide {
 	display: grid;
 	position: relative;
 	grid-template-columns: auto auto auto;
 	overflow-x: scroll;
 	scroll-behavior: smooth;
-
 }
-#slide::after{
+#slide::-webkit-scrollbar {
+	display: none;
+}
+#slide::after {
 	position: absolute;
 
-    content:"";
-    height:100%;
-    width:300vw;
-    top:0;
-    left:0;
-	background:linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%,rgb(0, 0, 0) 100%);
+	content: "";
+	height: 100%;
+	width: 300vw;
+	top: 0;
+	left: 0;
+	background: linear-gradient(
+		to bottom,
+		rgba(255, 255, 255, 0) 0%,
+		rgb(0, 0, 0) 100%
+	);
 }
-#slide > img{
+#slide > img {
 	height: calc(100vh - 48px);
 	width: 100vw;
 }
+.content {
 
-.content{
-	min-height: 200vh;
-	padding:  48px 0;
+	padding: 48px 0;
+}
+#home > #nav-bottom{
+	width: 100%;
+	display: flex;
+	align-items: flex-end;
+	justify-content: space-between;
+	position: fixed;
+	bottom: 0;
+	padding: 10px;
+
+}
+#home > div > a  {
+	height: min-content;
+	background-color: white;
+	box-shadow: 4px 4px 12px 0px rgba(0, 0, 0, 0.3);
+	padding: 5px 10px;
+	border-radius: 10px;
+	text-decoration: none;
+	font-size: 1.2em;
+	color: black;
+}
+#home > div > h1{
+	color: white;
+	font-size: 500%;
+}
+#login > div{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	max-width: 500px;
+	position: fixed;
+	top: 50vh;
+	left: 50vw;
+	transform: translate(-50%,-50%);
+	width: 50vw;
+	height: 50vh;
+	background-color: white;
+	border-radius: 20px;
+	box-shadow: 4px 4px 12px 0px rgba(0, 0, 0,0.5);
+	/* backdrop-filter: blur(5px); */
+}
+#login > div > div{
+	margin: 5px;
 }

@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import Slide from "./components/Slide";
 import { NavLink } from "react-router-dom";
-import SearchBox from "../Navbar/components/Search_box"
 
 export default class Home extends Component {
 	componentDidMount(){

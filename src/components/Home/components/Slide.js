@@ -17,7 +17,7 @@ export default class Slide extends Component {
 		if(i>2)
 		i=0
 		}
-		,2000)
+		,5000)
 	}
 	hovering(){
 		if(this.hover===true)

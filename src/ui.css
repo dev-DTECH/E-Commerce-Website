@@ -80,12 +80,29 @@ nav {
 	position: fixed;
 	top: 0;
 	backdrop-filter: blur(5px);
+	z-index: 50;
 	box-shadow: 4px 4px 12px 0px rgba(0, 0, 0, 0.3);
-	z-index: 2;
+	z-index: 50;
 	min-width: 100%;
 }
 nav > div {
 	display: flex;
+}
+#CategoriesMenu{
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: Calc(100% - 20px);
+	margin: 10px;
+	margin-top: 70px;
+	background-color: blueviolet;
+	transform: translateY( calc(-100% - 70px ));
+	transition: transform 0.5s;
+}
+#CategoriesMenu > div{
+	margin: 10px;
 }
 #menu > a{
 	min-width: 100px;
@@ -94,25 +111,29 @@ nav > div {
 	text-decoration: none;
 	color: black;
 	background-color: rgba(0, 0, 0, 0.05);
-
+	z-index: 1000;
 	border-radius: 20px;
 	padding: 5px;
+	transition: color 0.3s;
 }
 #menu > a:hover{
 	background-color: rgba(0, 0, 0, 0.1);
 
 }
 #menu > #active{
+	z-index: 999;
 	position: absolute;
 	width: 100px;
 	height: 28px;
 	background-color: black;
 	border-radius: 20px;
+	transition: all 0.3s;
 }
 #menu > #cart {
 	background-color: transparent;
 }
 .search-box {
+	margin:  5px 5px;
 	display: flex;
 	/* flex-direction: row; */
 	align-items: center;
@@ -139,9 +160,9 @@ nav > div {
 	border-radius: 20px;
 	height: 100%;
 	border: 0ch;
-	background-color: rgb(230, 230, 230);
+	background-color: #eeeeee;
 }
-nav > #categories{
+nav > #categories-button{
 
 	background-color: rgb(184, 253, 221);
 	padding: 5px 10px;
@@ -150,8 +171,11 @@ nav > #categories{
 #logo {
 	/* height: 40px;
 	width: 40px; */
-	margin: 10px;
+	padding: 10px;
 	color: darkorange;
+	background-color: #eeeeee;
+	height: 100%;
+	border-radius: 0 20px 20px 0;
 }
 footer {
 	text-align: center;
@@ -188,6 +212,9 @@ nav > #burger-menu {
 }
 #menu{
 	z-index: 100;
+}
+#menu > a:nth-child(1){
+	color: white;
 }
 #hide_menu{
 	z-index: 99;
@@ -249,7 +276,7 @@ nav > #burger-menu {
 	width: 100vw;
 }
 .content {
-
+	min-height: 200vh;
 	padding: 48px 0;
 }
 #home > #nav-bottom{

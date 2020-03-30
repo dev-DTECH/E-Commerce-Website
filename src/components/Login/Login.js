@@ -3,7 +3,6 @@ import React, { Component, createElement } from "react";
 
 export default class Login extends Component {
 	render() {
-        
 		return (
 			<div id="login">
 				{/* <h1>This is login page</h1> */}

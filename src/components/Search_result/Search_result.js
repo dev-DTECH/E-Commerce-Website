@@ -5,7 +5,7 @@ import ProductsList from './components/ProductsList.js'
 export default class Search_result extends Component {
 	render() {
 		return (
-		<div >
+		<div id="Search">
         <ProductsList/>
 		</div>
 		)

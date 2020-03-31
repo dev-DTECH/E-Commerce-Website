@@ -1,4 +1,4 @@
-import React, { Component, createElement } from "react";
+import React, { Component} from "react";
 // import "https://apis.google.com/js/platform.js"
 
 export default class Login extends Component {
@@ -6,7 +6,7 @@ export default class Login extends Component {
 		return (
 			<div id="login">
 				{/* <h1>This is login page</h1> */}
-				<div>
+				<div id="login-box">
 					<div className="g-signin2" data-onsuccess="onSignIn"></div>
 				</div>
 				<script

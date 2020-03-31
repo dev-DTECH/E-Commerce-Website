@@ -3,9 +3,19 @@ import { NavLink } from "react-router-dom";
 
 import SearchBox from "./components/Search_box.js";
 import Logo from "./components/Logo.js";
-import CategoriesMenu from "./components/CategoriesMenu";
+import data from "./components/categories.json";
+
+
 
 export default class Navbar extends Component {
+	constructor() {
+		super();
+		// this.ProductData=JSON.parse(data)
+
+		this.state = {
+			categories: data
+		};
+	}
 	toggleMenu() {
 		// let burger = document.querySelector("nav > #burger-menu");
 		let bar1 = this.refs.bar1;
@@ -34,7 +44,6 @@ export default class Navbar extends Component {
 		}
 	}
 	toggleCategoriesMenu() {
-		
 		let CategoriesMenu = this.refs.CategoriesMenu;
 		let hide_menu = this.refs.hide_menu;
 
@@ -50,6 +59,8 @@ export default class Navbar extends Component {
 		let bar3 = this.refs.bar3;
 		let hide_menu = this.refs.hide_menu;
 
+		let CategoriesMenu = this.refs.CategoriesMenu;
+
 		let menu = this.refs.menu;
 
 		bar1.style.transform = "none";
@@ -60,7 +71,11 @@ export default class Navbar extends Component {
 
 		menu.style.transform = "translateX(100%)";
 
+		CategoriesMenu.style.transform = "translateX(calc(-100% - 10px))";
+
 		hide_menu.style.display = "none";
+
+
 	}
 	activate(str) {
 		let active = this.refs.active;
@@ -107,7 +122,11 @@ export default class Navbar extends Component {
 				>
 					Categories
 				</div>
-				<CategoriesMenu ref="CategoriesMenu"></CategoriesMenu>
+				<div ref="CategoriesMenu" id="CategoriesMenu">
+					{this.state.categories.map((category, index) => (
+						<div key={index}>{category.name}</div>
+					))}
+				</div>
 
 				<div ref="menu" id="menu">
 					<div id="active" ref="active"></div>

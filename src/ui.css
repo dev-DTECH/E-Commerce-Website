@@ -48,6 +48,7 @@ html {
   z-index: 100;
   -webkit-box-shadow: 4px 4px 12px 0px rgba(0, 0, 0, 0.3);
           box-shadow: 4px 4px 12px 0px rgba(0, 0, 0, 0.3);
+  background-color: rgba(255, 255, 255, 0.5);
   min-width: 100%;
 }
 
@@ -145,6 +146,8 @@ html {
   overflow-x: hidden;
   border-radius: 10px;
   z-index: 100;
+  -webkit-box-shadow: 4px 4px 12px 0px rgba(0, 0, 0, 0.3);
+          box-shadow: 4px 4px 12px 0px rgba(0, 0, 0, 0.3);
 }
 
 #root nav #CategoriesMenu > div {
@@ -161,6 +164,10 @@ html {
 
 #root nav #CategoriesMenu > div:hover {
   background-color: rgba(0, 0, 0, 0.1);
+}
+
+#root nav #CategoriesMenu > div .SubCategory {
+  display: none;
 }
 
 #root nav #burger-menu {
@@ -390,8 +397,8 @@ html {
 #root .content #Search #product-list {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (minmax(320px, 1fr))[auto-fill];
-      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  -ms-grid-columns: (minmax(300px, 1fr))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   /* padding:  48px 0; */
 }
 
@@ -399,9 +406,12 @@ html {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   justify-items: center;
   margin: 10px;
-  height: 200px;
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 10px;
   font-size: 20px;
@@ -415,11 +425,13 @@ html {
 }
 
 #root .content #Search #product-list .product > div {
-  width: calc(100% - 200px);
+  overflow: auto;
+  width: calc(100%);
   position: relative;
   height: 200px;
-  display: -ms-grid;
-  display: grid;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -443,6 +455,7 @@ html {
 
 #root .content #Search #product-list .product > div .product-describtion {
   padding: 0 10px;
+  margin-top: 10px;
   -ms-flex-item-align: start;
       -ms-grid-row-align: start;
       align-self: start;
@@ -450,9 +463,11 @@ html {
   color: #616161;
 }
 
-#root .content #Search #product-list .product > div .buy-button {
+#root .content #Search #product-list .product > div .Buttons {
+  width: 100%;
   position: absolute;
   bottom: 10px;
+  padding: 0 10px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -460,13 +475,53 @@ html {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  background-color: rgba(255, 136, 0, 0.3);
-  justify-self: center;
-  border-radius: 10px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
-#root .content #Search #product-list .product > div .buy-button > div {
-  padding: 5px;
+#root .content #Search #product-list .product > div .Buttons .Price {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  background-color: rgba(0, 255, 34, 0.5);
+  justify-self: center;
   border-radius: 10px;
+  -webkit-box-shadow: 4px 4px 12px 0px rgba(0, 0, 0, 0.3);
+          box-shadow: 4px 4px 12px 0px rgba(0, 0, 0, 0.3);
+}
+
+#root .content #Search #product-list .product > div .Buttons .Price div {
+  margin: auto;
+  padding: 5px;
+}
+
+#root .content #Search #product-list .product > div .Buttons .Price > .price {
+  border-radius: 10px;
+  background-color: white;
+}
+
+#root .content #Search #product-list .product > div .Buttons .menu {
+  width: 20%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 /*# sourceMappingURL=ui.css.map */

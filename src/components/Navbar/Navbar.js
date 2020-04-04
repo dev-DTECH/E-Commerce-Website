@@ -5,13 +5,11 @@ import SearchBox from "./components/Search_box.js";
 import Logo from "./components/Logo.js";
 import data from "./components/categories.json";
 
-
-
 export default class Navbar extends Component {
 	constructor() {
 		super();
 		// this.ProductData=JSON.parse(data)
-
+		this.c = 0;
 		this.state = {
 			categories: data
 		};
@@ -68,14 +66,11 @@ export default class Navbar extends Component {
 		bar3.style.transform = "none";
 
 		bar2.style.opacity = "1";
-
-		menu.style.transform = "translateX(100%)";
+		if (window.innerWidth < 800) menu.style.transform = "translateX(100%)";
 
 		CategoriesMenu.style.transform = "translateX(calc(-100% - 10px))";
 
 		hide_menu.style.display = "none";
-
-
 	}
 	activate(str) {
 		let active = this.refs.active;
@@ -109,6 +104,7 @@ export default class Navbar extends Component {
 	}
 	componentDidMount() {
 		this.activate("home");
+		console.log(this.c);
 	}
 	render() {
 		return (
@@ -124,7 +120,9 @@ export default class Navbar extends Component {
 				</div>
 				<div ref="CategoriesMenu" id="CategoriesMenu">
 					{this.state.categories.map((category, index) => (
-						<div key={index}>{category.name}</div>
+						<div ref="CategoriesButton" key={index} name={category.name}>
+							{category.name}
+						</div>
 					))}
 				</div>
 

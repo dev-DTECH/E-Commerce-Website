@@ -1,15 +1,19 @@
 import React, { Component } from "react";
 import Product from "./Product.js";
 
+import ProductData from "./products.json"
+
 export default class ProductsList extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			products: [],
+			products: ProductData,
 			page: 0,
 			loading: true,
 			prevY: 0
 		};
+		// for(let i=0 ;i<50;i++)
+		// this.state.products[i]=ProductData[i]
 		this.noOfProducts = 20;
 		this.offset = 0;
 		this.addNewProduct = this.addNewProduct.bind(this);
@@ -43,6 +47,9 @@ export default class ProductsList extends Component {
 			})
 			.catch(function(error) {
 				console.log("Request failed", error);
+				// thiis.setState(state => {
+				// 	let data=ProductData;
+				// 	return {products: state.products.concat(data) }})
 			});
 	}
 	componentDidMount() {

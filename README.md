@@ -4,7 +4,7 @@
 
 The backend of this website is made by [dev-abir](https://github.com/dev-abir)
 
->This is a simple E-commerce website.
+>This is a simple E-commerce website made with react.
 
 [E-commerce](https://en.wikipedia.org/wiki/E-commerce)
 

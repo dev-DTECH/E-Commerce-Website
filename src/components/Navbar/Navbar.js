@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 import SearchBox from "./components/Search_box.js";
 import Logo from "./components/Logo.js";
 import data from "./components/categories.json";
-
+/* eslint-disable */
 export default class Navbar extends Component {
 	constructor() {
 		super();
